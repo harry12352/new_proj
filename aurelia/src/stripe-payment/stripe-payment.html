@@ -1,0 +1,30 @@
+<template>
+    <script src="https://js.stripe.com/v3/"></script>
+    <div class="modal-dialog modal-lg">
+        <require from="../../../css/stylesheet.css"></require>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Payment</h4>
+                <button type="button" id="stripe-modal-close" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <form class="stripe-form" submit.delegate="getToken()">
+                    <div class="group">
+                        <label class="stripe-label">
+                            <span>Title</span>
+                            <input id="name" class="stripe-field" placeholder="Jane Doe" />
+                        </label>
+                        <label class="stripe-label">
+                            <span>Card</span>
+                            <div id="card-element" class="stripe-field"></div>
+                        </label>
+                    </div>
+                    <button class="btn btn-outline-dark my-3" type="submit">Pay $25</button>
+                    <div class="stripe-outcome">
+                        <div class="stripe-error"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</template>
